@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+      <div class="conteiner" ng-app="myApp" ng-controller="myCtrl"> 
+        <span id="iconCad" class="iconCadst">+</span>
+        
+        <form id="formulario" class="formulario">
+          <h1>CADASTRAR NOVO<br> USUARIO</h1>
+          <input type="text" ng-model="addNome" placeholder="Nome">
+          <input type="text" maxlength="11" ng-model="addCpf" placeholder="Cpf">
+          <input ng-model="addCidade" placeholder="Cidade">
+          <button type="submit" ng-click="adiciona()">cadastrar</button>
+        </form>
+
+      <div id="editor-div" class="editar-form">
+        <form id="editor" class="formulario editavel">
+          <h1>EDITAR DADOS DO<br> USUARIO</h1>
+          <input type="text" ng-model="EditNome" placeholder="Nome">
+          <input type="text" maxlength="11" ng-model="EditCpf" placeholder="Cpf">
+          <input ng-model="EditCidade" placeholder="Cidade">
+          <button id="editavel-btn" type="submit" ng-click="editar()">cadastrar</button>
+        </form>
+      </div>
+
+      <div class="tabela">
+        <table>
+          <tr>
+            <th>EDITAR</th>
+            <th>NOME</th>
+            <th>CPF</th>
+            <th>CIDADE</th>
+            <th>DELETAR</th>
+          </tr>
+          <tr ng-repeat="x in pessoas" style="text-align: center;">
+            <td ng-click="aparecer($index)" ng-model="id" style="background:rgb(0, 110, 24);color: aliceblue;cursor: pointer;user-select: none;">&#9998;</td>
+            <td >{{x.nome}}</td>
+            <td>{{x.cpf}}</td>
+            <td>{{x.cidade}}</td>
+            <td ng-click="delete($index)" style="background:rgb(255, 61, 61);color: aliceblue;cursor: pointer;user-select: none;">DELETAR</td>
+          </tr>
+        </table>
+        <button id="relatorio" ng-click="salvar()">RELATORIO</button>
+      </div> 
+
+      </div>
+  
+  <script src="script.js"></script>
+
+</body>
+</html>
