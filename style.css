@@ -31,7 +31,22 @@ body{
     background-color: rgb(128,000,000);
     transition: 0.5s;
 }
-
+#close{
+    background-color:red;
+    display: block;
+    text-align: center;
+    border-radius: 100%;
+    font-size: 3vw;
+    font-weight: 700;
+    color: white;
+    width: 4.8vw;
+    padding: 0.7vw 0;
+    position: relative;
+    left: 69vw;
+    top: 4vw;
+    user-select: none;
+    transition: 0.5s;
+}
 .formulario{
     display: none;
     background-color: rgb(250, 250, 250);

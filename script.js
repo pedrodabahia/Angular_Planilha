@@ -72,4 +72,7 @@ app.controller('myCtrl', function($scope) {
     document.getElementById('formulario').classList.toggle('fade');
     document.getElementById('iconCad').classList.toggle('rotate');
   })
+  document.getElementById("close").addEventListener('click',() => {
+    document.getElementById('editor-div').classList.toggle('fade');
+  })
   
