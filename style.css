@@ -7,7 +7,7 @@ body{
 }
 
 .conteiner{
-    width: 80%;
+    width: 90%;
     margin: auto;
 }
 .iconCadst{
@@ -118,6 +118,7 @@ body{
 .tabela{
     width: 90%;
     margin: 10% 5%;
+    font-size: 1.5vw;
 }
 
 table{
@@ -128,8 +129,63 @@ table{
 table th{
     border: 2px solid black;
     padding: 1%;
+    font-size: 1.2vw
 }
 table td{
     padding: 1%;
     border:2px solid rgb(100,100,100);
+}
+
+
+@media screen and (max-width: 600px){
+
+    .iconCadst{
+    font-size: 8vw;
+    width: 13vw;
+    padding: 2vw 0;
+    left: 2vw;
+    top: 2vw;
+    }   
+
+    .formulario{
+    width: 50%;
+    padding: 5% 4%;
+    left: 16vw;
+    top: 3vw;
+    }
+
+    .formulario h1{
+    font-size: 4.5vw;
+    }
+
+    .formulario input,.formulario button{
+    font-size: 3vw;    
+    }
+    .tabela{
+    width: 100%;
+    margin: 20% 0%;
+    font-size: 2.5vw
+    }
+    table th{
+    font-size: 2.5vw
+    }
+    #relatorio{
+    background-color: green;
+    border: none;
+    padding: 3vw;
+    font-size: 2.5vw;
+    }
+
+    .editavel{
+    left: 21%;
+    top: 15%;
+    }
+    #close{
+    font-size: 5vw;
+    width: 9vw;
+    padding: 2vw 0;
+    left: 78vw;
+    top: 7%;
+}
+
 }
