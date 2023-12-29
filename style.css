@@ -231,6 +231,12 @@ table td{
 .inicialização h1{
     width: 90%;
     margin: 7% 5% ;
-    font-size: 5vw;
+    font-size: 6vw;
+}
+.inicialização p{
+    font-size: 3vw;
+}
+.inicialização h3{
+    font-size 3vw;
 }
 }
