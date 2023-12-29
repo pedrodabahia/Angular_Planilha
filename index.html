@@ -1,28 +1,49 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" type="text/css" href="style.css">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0;">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <body>
 
-      <div class="conteiner" ng-app="myApp" ng-controller="myCtrl"> 
-        <span id="iconCad" class="iconCadst">+</span>
+    <div class="conteiner" ng-app="myApp" ng-controller="myCtrl"> 
+  
+        <div id="inicialize" class="editar-form inicialização">     
+          <form id="editor" class="formulario editavel init-div"> 
+            <h1>SEJA BEM VINDO AO<br> <U style="text-shadow: 0 0.2vw 0.3vw rgb(000,070,000);">TABLE GENERATOR</U></h1>
+            <p><u>Aqui</u> você pode criar sua tabela de forma organizada e ainda gerar um relatorio em arquivo .txt para poder ficar no controle dos seus dados!!</p>
+            <h3>Para começarmos, preencha a baixo os titulos de cada coluna da sua tabela.</h3>
+            <input type="text" ng-model="editTable1" placeholder="table1">
+            <input type="text" ng-model="editTable2" placeholder="table2">
+            <input type="text" ng-model="editTable3" placeholder="table3">
+            <button id="editavel-btn" type="submit" ng-click="inicializador()">COMEÇAR</button>
+          </form>
+        </div>
+                
+  
+  
+  
+  
+  
+      <span id="iconCad" class="iconCadst">+</span>
+        <H1>TABLE GENERATOR</H1>
+        
         
         <form id="formulario" class="formulario">
-          <h1>CADASTRAR NOVO<br> USUARIO</h1>
-          <input type="text" ng-model="addNome" placeholder="Nome">
-          <input type="text" maxlength="11" ng-model="addCpf" placeholder="Cpf">
-          <input ng-model="addCidade" placeholder="Cidade">
+          <h1>CADASTRAR NOVO<br> ITEM</h1>
+          <input name="input-column1" type="text" ng-model="addValor1" placeholder="Nome">
+          <input name="input-column2" type="text" maxlength="11" ng-model="addValor2" placeholder="Cpf">
+          <input name="input-column3" ng-model="addValor3" placeholder="Cidade">
           <button type="submit" ng-click="adiciona()">cadastrar</button>
         </form>
 
       <div id="editor-div" class="editar-form">
-        <span id="close">X</span>
-        <form id="editor" class="formulario editavel">
-          <h1>EDITAR DADOS DO<br> USUARIO</h1>
-          <input type="text" ng-model="EditNome" placeholder="Nome">
-          <input type="text" maxlength="11" ng-model="EditCpf" placeholder="Cpf">
-          <input ng-model="EditCidade" placeholder="Cidade">
+       
+        <form id="editor" class="formulario editavel"> 
+          <span class="close" id="close-edit">X</span>
+          <h1>EDITAR DADOS DO<br> ITEM</h1>
+          <input name="input-column1" type="text" ng-model="EditValor1" placeholder="Nome">
+          <input name="input-column2" type="text" maxlength="11" ng-model="EditValor2" placeholder="Cpf">
+          <input name="input-column3" ng-model="EditValor3" placeholder="Cidade">
           <button id="editavel-btn" type="submit" ng-click="editar()">cadastrar</button>
         </form>
       </div>
@@ -31,16 +52,16 @@
         <table>
           <tr>
             <th>EDIT</th>
-            <th>NOME</th>
-            <th>CPF</th>
-            <th>CIDADE</th>
+            <th>{{table1}}</th>
+            <th>{{table2}}</th>
+            <th>{{table3}}</th>
             <th>DELET</th>
           </tr>
           <tr ng-repeat="x in pessoas" style="text-align: center;">
             <td ng-click="aparecer($index)" ng-model="id" style="background:rgb(0, 110, 24);color: aliceblue;cursor: pointer;user-select: none;">&#9998;</td>
-            <td >{{x.nome}}</td>
-            <td>{{x.cpf}}</td>
-            <td>{{x.cidade}}</td>
+            <td >{{x.elemento1}}</td>
+            <td>{{x.elemento2}}</td>
+            <td>{{x.elemento3}}</td>
             <td ng-click="delete($index)" style="background:rgb(255, 61, 61);color: aliceblue;cursor: pointer;user-select: none;">DELETAR</td>
           </tr>
         </table>
